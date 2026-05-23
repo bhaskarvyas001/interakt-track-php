@@ -1,0 +1,32 @@
+{
+    "name": "interakt/track-php",
+    "description": "The easy way to integrate track APIs for Interakt in PHP",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Interakt\\Track\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "authors": [
+        {
+            "name": "Amar Jaiswal",
+            "email": "amar.j@cawstudios.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0-dev"
+        }
+    }
+}
