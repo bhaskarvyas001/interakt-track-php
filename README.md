@@ -1,11 +1,11 @@
-# Interakt Track PHP
+# Interakt APIs PHP
 
-A PHP port of the Interakt Track SDK with user and event tracking support.
+A PHP port of the Interakt api SDK with user and event tracking support.
 
 ## Installation
 
 ```bash
-composer require interakt/track-php
+composer require interakt/interakt-api-php
 ```
 
 ## Usage

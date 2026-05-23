@@ -1,6 +1,6 @@
 {
-    "name": "interakt/track-php",
-    "description": "The easy way to integrate track APIs for Interakt in PHP",
+    "name": "interakt/interakt-api-php",
+    "description": "The easy way to integrate APIs for Interakt in PHP",
     "type": "library",
     "license": "MIT",
     "require": {
@@ -19,8 +19,8 @@
     },
     "authors": [
         {
-            "name": "Amar Jaiswal",
-            "email": "amar.j@cawstudios.com"
+            "name": "Deepak Kumar",
+            "email": "bhaskarvyas001@yahoo.co.in"
         }
     ],
     "minimum-stability": "stable",
