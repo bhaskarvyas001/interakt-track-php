@@ -129,6 +129,43 @@ class Client
         return $this->queueRequest(ApiPaths::EVENT, $body);
     }
 
+    public function message(array $body)
+    {
+        Utils::requireType('body', $body, 'array');
+        return $this->queueRequest(ApiPaths::MESSAGE, $body);
+    }
+
+    public function sendTemplate(string $countryCode, string $phoneNumber, array $template, ?string $callbackData = null, ?string $campaignId = null)
+    {
+        Utils::requireType('country_code', $countryCode, 'string');
+        Utils::verifyCountryCode($countryCode);
+        Utils::requireType('phone_number', $phoneNumber, 'string');
+        if (!ctype_digit($phoneNumber)) {
+            throw new \InvalidArgumentException(sprintf('Invalid phone_number %s', $phoneNumber));
+        }
+
+        Utils::requireType('template', $template, 'array');
+
+        $body = [
+            'countryCode' => $countryCode,
+            'phoneNumber' => $phoneNumber,
+            'type' => 'Template',
+            'template' => $template,
+        ];
+
+        if ($callbackData !== null) {
+            Utils::requireType('callbackData', $callbackData, 'string');
+            $body['callbackData'] = $callbackData;
+        }
+
+        if ($campaignId !== null) {
+            Utils::requireType('campaignId', $campaignId, 'string');
+            $body['campaignId'] = $campaignId;
+        }
+
+        return $this->queueRequest(ApiPaths::MESSAGE, $body);
+    }
+
     public function flush(): void
     {
         if ($this->syncMode) {

@@ -25,6 +25,16 @@ class Track
         return self::getClient()->event($userId, $event, $traits, $countryCode, $phoneNumber);
     }
 
+    public static function message(array $body)
+    {
+        return self::getClient()->message($body);
+    }
+
+    public static function sendTemplate(string $countryCode, string $phoneNumber, array $template, ?string $callbackData = null, ?string $campaignId = null)
+    {
+        return self::getClient()->sendTemplate($countryCode, $phoneNumber, $template, $callbackData, $campaignId);
+    }
+
     public static function flush(): void
     {
         self::getClient()->flush();
