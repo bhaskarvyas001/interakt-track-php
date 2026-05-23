@@ -30,8 +30,8 @@ class Request
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
             'User-Agent: interakt-track-php/1.0.0',
+            'Authorization: Basic ' . $apiKey
         ]);
-        curl_setopt($ch, CURLOPT_USERPWD, $apiKey . ':');
         curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
 
         $response = curl_exec($ch);
