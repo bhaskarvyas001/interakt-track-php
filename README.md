@@ -5,7 +5,7 @@ A PHP port of the Interakt api SDK with user and event tracking support.
 ## Installation
 
 ```bash
-composer require interakt/interakt-api-php
+composer require bhaskarvyas001/interakt-api-php
 ```
 
 ## Usage
